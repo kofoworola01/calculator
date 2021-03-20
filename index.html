@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR APP</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div>
+            <input type="text" id="display" disabled>
+        </div> <br>
+
+        <div class="primary-container"></div>
+            <div class="divs">
+                <button value="9" class="btn" onclick="fordisplay(9)">9</button>
+                <button value="8" class="btn" onclick="fordisplay(8)">8</button>
+                <button value="7" class="btn" onclick="fordisplay(7)">7</button>
+                <button class="btn operator" value="+" onclick="fordisplay('+')"> + </button>
+            </div>
+            <div class="divs">
+                <button value="6" class="btn" onclick="fordisplay(6)">6</button>
+                <button value="5" class="btn" onclick="fordisplay(5)">5</button>
+                <button value="4" class="btn" onclick="fordisplay(4)">4</button>
+                <button class="btn operator" value="-" onclick="fordisplay('-')"> - </button>
+            </div>
+            <div class="divs">
+                <button value="3" class="btn" onclick="fordisplay(3)">3</button>
+                <button value="2" class="btn" onclick="fordisplay(2)">2</button>
+                <button value="1" class="btn" onclick="fordisplay(1)">1</button>
+                <button class="btn operator" value="*" onclick="fordisplay('*')"> x </button>
+            </div>
+            <div class="divs">
+                <button value="0" class="btn" onclick="fordisplay(0)">0</button>
+                <button class="btn btn-clr" onclick="clr()">CLR</button>
+                <button class="btn operator" value="/" onclick="fordisplay('/')">/</button>
+                <button class="btn" onclick="solve()"> = </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function fordisplay (value) {
+            document.getElementById('display').value += value
+        }
+
+        function clr() {
+            document.getElementById("display").value = "" 
+        }
+        
+        function solve () {
+            let x = document.getElementById('display').value
+            let y = eval(x)
+            document.getElementById('display').value = y
+        }
+        
+    </script>
+</body>
+</html>
